@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import DogList from './DogList'
+import { Route, Switch, NavLink } from 'react-router-dom';
 import './App.css';
 import Nav from './Nav'
 
@@ -46,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-        <Nav dogs={this.props.dogs} />
+        <Route exact path="/dogs" render={() => <DogList dogs={this.props.dogs} />} />
       </div>
     );
   }
